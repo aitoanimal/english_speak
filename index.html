@@ -6,14 +6,11 @@
 <title>Paper Voice — Read. Listen. Speak.</title>
 <style>
 :root{--bg:#f6f5f0;--paper:#fffefa;--ink:#252720;--muted:#77796f;--line:#e7e5dc;--accent:#c8ef68;--accent-dark:#32421b;--lav:#e9e4fa;--peach:#f7dfd2;--radius:22px}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;letter-spacing:-.02em}
-button,input,textarea,select{font:inherit}
-button{cursor:pointer}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;letter-spacing:-.02em}
+button,input,textarea,select{font:inherit}button{cursor:pointer}
 .wrap{max-width:1160px;margin:auto;padding:28px 28px 56px}
 nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:58px}
-.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:18px;letter-spacing:-.05em}
-.brandmark{width:35px;height:35px;border-radius:12px;background:var(--accent);display:grid;place-items:center;font-size:18px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:18px;letter-spacing:-.05em}.brandmark{width:35px;height:35px;border-radius:12px;background:var(--accent);display:grid;place-items:center;font-size:18px}
 .nav-note{font-size:12px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
 .hero{display:grid;grid-template-columns:1.3fr .7fr;gap:35px;align-items:end;margin-bottom:34px}
 .eyebrow{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:#69705a;font-weight:800;margin-bottom:17px}
@@ -24,549 +21,98 @@ h1 em{font-style:normal;background:var(--accent);padding:0 .12em;border-radius:8
 .section-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}
 .step{font-size:11px;font-weight:800;letter-spacing:.12em;color:#818375}
 h2{font-size:18px;letter-spacing:-.04em;margin:4px 0 0}
-.layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px;align-items:start}
+.layout{display:grid;grid-template-columns: .9fr 1.1fr;gap:18px;align-items:start}
 .urlbox{display:flex;gap:8px;margin-top:18px}
 input[type=url]{width:100%;min-width:0;background:#f8f7f2;border:1px solid var(--line);border-radius:13px;padding:14px 15px;outline:none}
 input:focus,textarea:focus{border-color:#a8c957}
 .btn{border:0;border-radius:13px;padding:13px 17px;font-weight:750;white-space:nowrap;transition:transform .15s,opacity .15s}
-.btn:hover{transform:translateY(-1px)}
-.primary{background:var(--accent);color:var(--accent-dark)}
-.dark{background:var(--ink);color:white}
-.soft{background:#f0efe8;color:var(--ink)}
-.small{font-size:12px;padding:9px 12px}
+.btn:hover{transform:translateY(-1px)}.primary{background:var(--accent);color:var(--accent-dark)}.dark{background:var(--ink);color:white}.soft{background:#f0efe8;color:var(--ink)}.small{font-size:12px;padding:9px 12px}
 .hint{font-size:12px;color:var(--muted);line-height:1.65;margin:13px 0 0}
-.status{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--muted);margin-top:13px}
-.dot{width:7px;height:7px;border-radius:50%;background:#a4c85a}
-.paper-meta{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 15px}
-.pill{background:#f0efe8;padding:6px 9px;border-radius:999px;font-size:11px;color:#66685e}
+.status{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--muted);margin-top:13px}.dot{width:7px;height:7px;border-radius:50%;background:#a4c85a}
+.paper-meta{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 15px}.pill{background:#f0efe8;padding:6px 9px;border-radius:999px;font-size:11px;color:#66685e}
 textarea{width:100%;height:220px;resize:vertical;border:1px solid var(--line);background:#fbfaf6;border-radius:15px;padding:16px;line-height:1.75;font-size:13px;color:#41433a;outline:none}
 .toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:13px;flex-wrap:wrap}
 .wordcount{font-size:11px;color:var(--muted)}
 .practice{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .read-card{background:#242720;color:#f8f7ef;border-radius:var(--radius);padding:25px;min-height:245px;position:relative;overflow:hidden}
 .read-card:after{content:"";position:absolute;width:190px;height:190px;border:1px solid #ffffff18;border-radius:50%;right:-65px;bottom:-75px;box-shadow:0 0 0 24px #ffffff08,0 0 0 48px #ffffff05;pointer-events:none}
-.read-card .step{color:#b7c49a}
-.read-card h2{font-size:22px;margin-top:7px}
-.read-card p{font-size:13px;line-height:1.7;color:#c5c7bc;max-width:330px}
-.controls{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px;position:relative;z-index:1}
-.read-card .soft{background:#41443b;color:white}
+.read-card .step{color:#b7c49a}.read-card h2{font-size:22px;margin-top:7px}.read-card p{font-size:13px;line-height:1.7;color:#c5c7bc;max-width:330px}
+.controls{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px;position:relative;z-index:1}.read-card .soft{background:#41443b;color:white}
 .mic-card{background:var(--lav);border-radius:var(--radius);padding:25px;min-height:245px}
 .mic-card p{font-size:13px;line-height:1.7;color:#69657c}
 .mic-row{display:flex;align-items:center;gap:15px;margin-top:21px}
 .mic{width:58px;height:58px;border:0;border-radius:50%;background:#c9bdf5;color:#34285d;font-size:22px;display:grid;place-items:center;box-shadow:0 6px 0 #b3a5e5}
 .mic.recording{background:#ffb6a5;box-shadow:0 6px 0 #e79784;animation:pulse 1.2s infinite}
-.mic:disabled{opacity:.4;cursor:not-allowed;box-shadow:none}
 @keyframes pulse{50%{transform:scale(1.06)}}
-.mic-copy strong{display:block;font-size:13px}
-.mic-copy span{font-size:11px;color:#77728d;display:block;margin-top:5px}
-.result{margin-top:18px;padding:13px 14px;border-radius:13px;background:#ffffffa8;font-size:12px;line-height:1.7;color:#514c67;min-height:48px;white-space:pre-line;overflow-wrap:anywhere}
-.target{margin-top:18px}
-.target label{display:block;font-size:11px;color:#77728d;font-weight:700;margin-bottom:9px}
-.sentence-choices{display:flex;flex-direction:column;gap:7px;max-height:185px;overflow:auto}
-.sentence-choice{border:1px solid #d8d1f0;background:#ffffff9c;border-radius:11px;padding:10px 12px;text-align:left;font-size:12px;line-height:1.6;color:#514c67}
-.sentence-choice:hover{background:#fff}
-.sentence-choice.active{background:#dcd3fa;border-color:#9b8ad9;color:#34285d}
-.selected-label{font-size:10px;letter-spacing:.08em;font-weight:800;color:#77728d;margin:13px 0 6px}
-.selected-sentence{width:100%;border:1px solid #d8d1f0;border-radius:11px;padding:12px;background:#ffffffa8;font-size:13px;line-height:1.65;color:#514c67;min-height:45px;overflow-wrap:anywhere}
+.mic-copy strong{display:block;font-size:13px}.mic-copy span{font-size:11px;color:#77728d;display:block;margin-top:5px}
+.result{margin-top:18px;padding:13px 14px;border-radius:13px;background:#ffffffa8;font-size:12px;line-height:1.7;color:#514c67;min-height:48px}
+.target{margin-top:18px}.target label{display:block;font-size:11px;color:#77728d;font-weight:700;margin-bottom:7px}
+.target input{width:100%;border:1px solid #d8d1f0;border-radius:11px;padding:12px;background:#ffffffa8;outline:none}
 .footer{margin-top:25px;display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:11px;line-height:1.7}
 .toast{display:none;margin-top:12px;padding:12px 14px;background:#fff1d6;border-radius:12px;color:#75581f;font-size:12px;line-height:1.6}
-@media(max-width:800px){
-.wrap{padding:20px 16px 40px}
-nav{margin-bottom:40px}
-.hero{grid-template-columns:1fr;gap:18px;margin-bottom:25px}
-.hero p{max-width:500px}
-.layout,.practice{grid-template-columns:1fr}
-.panel{padding:20px}
-.read-card,.mic-card{padding:22px}
-}
+@media(max-width:800px){.wrap{padding:20px 16px 40px}nav{margin-bottom:40px}.hero{grid-template-columns:1fr;gap:18px;margin-bottom:25px}.hero p{max-width:500px}.layout,.practice{grid-template-columns:1fr}.panel{padding:20px}.read-card,.mic-card{padding:22px}}
 </style>
 </head>
 <body>
 <div class="wrap">
-
-<nav>
-  <div class="brand">
-    <div class="brandmark">◒</div>
-    paper voice<span style="font-weight:400;color:#85877c"> / LAB</span>
-  </div>
-  <div class="nav-note">Read · Listen · Speak</div>
-</nav>
-
-<header class="hero">
-  <div>
-    <div class="eyebrow">A new way to study papers</div>
-    <h1>Read it.<br>Hear it.<br><em>Say it.</em></h1>
-  </div>
-  <p>論文を読むだけで終わらせない。専門用語の音を聞き、自分の声で練習するための英語学習ワークスペース。</p>
-</header>
-
+<nav><div class="brand"><div class="brandmark">◒</div>paper voice<span style="font-weight:400;color:#85877c"> / LAB</span></div><div class="nav-note">Read · Listen · Speak</div></nav>
+<header class="hero"><div><div class="eyebrow">A new way to study papers</div><h1>Read it.<br>Hear it.<br><em>Say it.</em></h1></div><p>論文を読むだけで終わらせない。専門用語の音を聞き、自分の声で練習するための英語学習ワークスペース。</p></header>
 <div class="layout">
-
 <section class="panel">
-  <div class="section-head">
-    <div>
-      <div class="step">01 / IMPORT</div>
-      <h2>論文を取り込む</h2>
-    </div>
-    <span class="pill">URL → TEXT</span>
-  </div>
-
-  <form id="urlForm">
-    <div class="urlbox">
-      <input id="paperUrl" type="url" placeholder="https://doi.org/… / 論文URL" aria-label="論文URL" required>
-      <button class="btn primary" type="submit">取得する ↗</button>
-    </div>
-  </form>
-
-  <div class="status">
-    <span class="dot"></span>
-    <span id="importStatus">URLを入力して論文テキストを読み込みます</span>
-  </div>
-
-  <p class="hint">※ ブラウザだけでは多くの論文サイトから全文を直接取得できません。取得に失敗した場合は、論文本文を下のテキスト欄に貼り付けてください。ペイウォールを回避する機能はありません。</p>
-  <div id="fetchToast" class="toast"></div>
-
-  <div style="margin-top:25px">
-    <div class="section-head">
-      <div>
-        <div class="step">02 / ARTICLE</div>
-        <h2>論文テキスト</h2>
-      </div>
-      <button id="clearBtn" class="btn soft small" type="button">クリア</button>
-    </div>
-
-    <div class="paper-meta">
-      <span class="pill">Editable text</span>
-      <span class="pill">English practice</span>
-    </div>
-
-    <textarea id="articleText" placeholder="ここに論文の本文を貼り付けてください。Abstractや練習したい段落だけでもOKです。">The liver plays a central role in metabolism, detoxification, and protein synthesis. Human liver organoids provide a promising model for studying liver development and disease. However, reproducing the complexity of the human liver in vitro remains challenging.</textarea>
-
-    <div class="toolbar">
-      <span class="wordcount" id="wordCount">0 words · 0 characters</span>
-      <button class="btn soft small" id="sampleBtn" type="button">サンプルに戻す</button>
-    </div>
-  </div>
+<div class="section-head"><div><div class="step">01 / IMPORT</div><h2>論文を取り込む</h2></div><span class="pill">URL → TEXT</span></div>
+<form id="urlForm"><div class="urlbox"><input id="paperUrl" type="url" placeholder="https://doi.org/… / 論文URL" aria-label="論文URL" required><button class="btn primary" type="submit">取得する ↗</button></div></form>
+<div class="status"><span class="dot"></span><span id="importStatus">URLを入力して論文テキストを読み込みます</span></div>
+<p class="hint">※ ブラウザだけでは多くの論文サイトから全文を直接取得できません。取得に失敗した場合は、論文本文を下のテキスト欄に貼り付けてください。ペイウォールを回避する機能はありません。</p>
+<div id="fetchToast" class="toast"></div>
+<div style="margin-top:25px"><div class="section-head"><div><div class="step">02 / ARTICLE</div><h2>論文テキスト</h2></div><button id="clearBtn" class="btn soft small" type="button">クリア</button></div>
+<div class="paper-meta"><span class="pill">Editable text</span><span class="pill">English practice</span></div>
+<textarea id="articleText" placeholder="ここに論文の本文を貼り付けてください。Abstractや練習したい段落だけでもOKです。">The liver plays a central role in metabolism, detoxification, and protein synthesis. Human liver organoids provide a promising model for studying liver development and disease. However, reproducing the complexity of the human liver in vitro remains challenging.</textarea>
+<div class="toolbar"><span class="wordcount" id="wordCount">0 words · 0 characters</span><button class="btn soft small" id="sampleBtn" type="button">サンプルに戻す</button></div>
+</div>
 </section>
-
 <section>
-  <div class="panel">
-    <div class="section-head">
-      <div>
-        <div class="step">03 / LISTEN</div>
-        <h2>音声で聞く</h2>
-      </div>
-      <span class="pill">Text to Speech</span>
-    </div>
-
-    <p class="hint" style="margin-top:-5px;margin-bottom:14px">読み上げたい範囲を選択するか、全文をそのまま再生できます。</p>
-
-    <div class="toolbar" style="margin-top:0;margin-bottom:14px">
-      <label style="font-size:12px;color:var(--muted)" for="voiceSelect">Voice</label>
-      <select id="voiceSelect" style="max-width:70%;border:1px solid var(--line);background:#f8f7f2;border-radius:10px;padding:10px">
-        <option value="">利用可能な英語音声を読み込み中…</option>
-      </select>
-    </div>
-
-    <div class="toolbar">
-      <label style="font-size:12px;color:var(--muted)" for="rate">速度 <span id="rateValue">0.9×</span></label>
-      <input id="rate" type="range" min="0.6" max="1.2" value="0.9" step="0.1" style="flex:1;accent-color:#9fc94e">
-    </div>
-
-    <div class="controls" style="margin-top:16px">
-      <button id="playBtn" class="btn primary">▶ 全文を再生</button>
-      <button id="selectionBtn" class="btn soft">選択範囲を再生</button>
-      <button id="stopBtn" class="btn soft">■ 停止</button>
-    </div>
-
-    <div class="status">
-      <span class="dot"></span>
-      <span id="speechStatus">ブラウザの音声読み上げ機能を使用します</span>
-    </div>
-  </div>
-
-  <div class="practice">
-    <div class="read-card">
-      <div class="step">04 / REPEAT</div>
-      <h2>Listen. Repeat.</h2>
-      <p>まず聞いて、次に自分の声で。短い文や専門用語を区切って練習しましょう。</p>
-      <div class="controls">
-        <button id="readAgainBtn" class="btn soft">↻ もう一度聞く</button>
-      </div>
-    </div>
-
-    <div class="mic-card">
-      <div class="step">05 / SPEAK</div>
-      <h2 style="font-size:22px;margin-top:7px">発音をチェック</h2>
-      <p>論文から練習したい一文を選び、マイクで発音。音声認識結果をお手本と比較します。</p>
-
-      <div class="target">
-        <label>CHOOSE A SENTENCE · 練習する文を選択</label>
-        <div id="sentenceChoices" class="sentence-choices" aria-label="練習する文の一覧"></div>
-        <div class="selected-label">選択中のお手本</div>
-        <div id="targetText" class="selected-sentence">上の文をタップして選択してください</div>
-      </div>
-
-      <div class="mic-row">
-        <button id="micBtn" class="mic" aria-label="選択した文を発音" disabled>🎙</button>
-        <div class="mic-copy">
-          <strong id="micTitle">文を選んでから話す</strong>
-          <span id="micSub">選択した英文を声に出してください</span>
-        </div>
-      </div>
-
-      <div class="result" id="pronResult" aria-live="polite">発音結果はここに表示されます。</div>
-    </div>
-  </div>
+<div class="panel">
+<div class="section-head"><div><div class="step">03 / LISTEN</div><h2>音声で聞く</h2></div><span class="pill">Text to Speech</span></div>
+<p class="hint" style="margin-top:-5px;margin-bottom:14px">読み上げたい範囲を選択するか、全文をそのまま再生できます。</p>
+<div class="toolbar" style="margin-top:0;margin-bottom:14px"><label style="font-size:12px;color:var(--muted)" for="voiceSelect">Voice</label><select id="voiceSelect" style="max-width:70%;border:1px solid var(--line);background:#f8f7f2;border-radius:10px;padding:10px"><option value="">利用可能な英語音声を読み込み中…</option></select></div>
+<div class="toolbar"><label style="font-size:12px;color:var(--muted)" for="rate">速度 <span id="rateValue">0.9×</span></label><input id="rate" type="range" min="0.6" max="1.2" value="0.9" step="0.1" style="flex:1;accent-color:#9fc94e"></div>
+<div class="controls" style="margin-top:16px"><button id="playBtn" class="btn primary">▶ 全文を再生</button><button id="selectionBtn" class="btn soft">選択範囲を再生</button><button id="stopBtn" class="btn soft">■ 停止</button></div>
+<div class="status"><span class="dot"></span><span id="speechStatus">ブラウザの音声読み上げ機能を使用します</span></div>
+</div>
+<div class="practice">
+<div class="read-card"><div class="step">04 / REPEAT</div><h2>Listen. Repeat.</h2><p>まず聞いて、次に自分の声で。短い文や専門用語を区切って練習しましょう。</p><div class="controls"><button id="readAgainBtn" class="btn soft">↻ もう一度聞く</button></div></div>
+<div class="mic-card"><div class="step">05 / SPEAK</div><h2 style="font-size:22px;margin-top:7px">発音をチェック</h2><p>練習したい単語や文を入力して、マイクで発音。音声認識結果をお手本と比較します。</p>
+<div class="target"><label for="targetText">PRACTICE TARGET</label><input id="targetText" value="Human liver organoids" placeholder="単語や英文を入力"></div>
+<div class="mic-row"><button id="micBtn" class="mic" aria-label="発音を録音">🎙</button><div class="mic-copy"><strong id="micTitle">タップして話す</strong><span id="micSub">英語で発音してください</span></div></div>
+<div class="result" id="pronResult" aria-live="polite">発音結果はここに表示されます。</div>
+</div>
+</div>
 </section>
 </div>
-
-<div class="footer">
-  <span>Designed for curious minds.<br>Paper Voice / English for research</span>
-  <span>音声認識はブラウザ・端末により対応状況が異なります。<br>判定は音声認識テキストの比較であり、音響学的な発音採点ではありません。</span>
+<div class="footer"><span>Designed for curious minds.<br>Paper Voice / English for research</span><span>音声認識はブラウザ・端末により対応状況が異なります。<br>判定は音声認識テキストの比較であり、音響学的な発音採点ではありません。</span></div>
 </div>
-</div>
-
 <script>
-const $ = id => document.getElementById(id);
-
-const sample = "The liver plays a central role in metabolism, detoxification, and protein synthesis. Human liver organoids provide a promising model for studying liver development and disease. However, reproducing the complexity of the human liver in vitro remains challenging.";
-
-let voices = [];
-
-function updateCount() {
-  const t = $('articleText').value.trim();
-  const words = t ? t.split(/\s+/).length : 0;
-  $('wordCount').textContent = `${words} words · ${$('articleText').value.length} characters`;
-}
-
-function loadVoices() {
-  voices = speechSynthesis.getVoices();
-  const sel = $('voiceSelect');
-  const old = sel.value;
-  sel.innerHTML = '';
-
-  const english = voices.filter(v =>
-    /^en(-|_)?/i.test(v.lang) || /english/i.test(v.lang + ' ' + v.name)
-  );
-  const list = english.length ? english : voices;
-
-  if (!list.length) {
-    sel.innerHTML = '<option value="">音声が見つかりません</option>';
-    return;
-  }
-
-  list.forEach(v => {
-    const o = document.createElement('option');
-    o.value = voices.indexOf(v);
-    o.textContent = `${v.name} (${v.lang})`;
-    sel.appendChild(o);
-  });
-
-  if (old) sel.value = old;
-}
-
-if ('speechSynthesis' in window) {
-  loadVoices();
-  speechSynthesis.onvoiceschanged = loadVoices;
-}
-
-function speak(text) {
-  if (!text.trim()) {
-    alert('読み上げるテキストを入力してください。');
-    return;
-  }
-
-  if (!('speechSynthesis' in window)) {
-    alert('このブラウザは音声読み上げに対応していません。');
-    return;
-  }
-
-  speechSynthesis.cancel();
-
-  const u = new SpeechSynthesisUtterance(text);
-  u.lang = 'en-US';
-  u.rate = Number($('rate').value);
-
-  const v = voices[Number($('voiceSelect').value)];
-  if (v) {
-    u.voice = v;
-    u.lang = v.lang;
-  }
-
-  u.onstart = () => $('speechStatus').textContent = '読み上げ中…';
-  u.onend = () => $('speechStatus').textContent = '読み上げが完了しました';
-  u.onerror = () => $('speechStatus').textContent = '音声を再生できませんでした';
-
-  speechSynthesis.speak(u);
-}
-
-$('playBtn').onclick = () => speak($('articleText').value);
-
-$('selectionBtn').onclick = () => {
-  const ta = $('articleText');
-  const selected = ta.value.slice(ta.selectionStart, ta.selectionEnd);
-
-  if (!selected) {
-    alert('テキスト欄で読み上げたい範囲を選択してください。');
-    return;
-  }
-
-  speak(selected);
-};
-
-$('readAgainBtn').onclick = () => {
-  const target = $('targetText').dataset.text || '';
-  speak(target || $('articleText').value);
-};
-
-$('stopBtn').onclick = () => {
-  speechSynthesis.cancel();
-  $('speechStatus').textContent = '読み上げを停止しました';
-};
-
-$('rate').oninput = () => {
-  $('rateValue').textContent = Number($('rate').value).toFixed(1) + '×';
-};
-
-$('articleText').addEventListener('input', () => {
-  updateCount();
-  renderSentences();
-});
-
-updateCount();
-renderSentences();
-
-$('clearBtn').onclick = () => {
-  $('articleText').value = '';
-  $('targetText').dataset.text = '';
-  $('targetText').textContent = '上の文をタップして選択してください';
-  $('micBtn').disabled = true;
-  updateCount();
-  renderSentences();
-};
-
-$('sampleBtn').onclick = () => {
-  $('articleText').value = sample;
-  $('targetText').dataset.text = '';
-  updateCount();
-  renderSentences();
-};
-
-$('urlForm').addEventListener('submit', async e => {
-  e.preventDefault();
-
-  const url = $('paperUrl').value.trim();
-  $('importStatus').textContent = 'URLを確認しています…';
-  $('fetchToast').style.display = 'none';
-
-  try {
-    new URL(url);
-
-    const proxy = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(url);
-    const res = await fetch(proxy, { signal: AbortSignal.timeout(12000) });
-
-    if (!res.ok) throw Error('fetch failed');
-
-    const html = await res.text();
-    const doc = new DOMParser().parseFromString(html, 'text/html');
-
-    doc.querySelectorAll('script,style,nav,header,footer,aside,form,iframe,noscript')
-      .forEach(n => n.remove());
-
-    let text = doc.querySelector('article')?.innerText
-      || doc.querySelector('main')?.innerText
-      || doc.body.innerText;
-
-    text = text.replace(/\n{3,}/g, '\n\n').trim();
-
-    if (text.length < 300) throw Error('no full text');
-
-    $('articleText').value = text;
-    updateCount();
-    renderSentences();
-
-    $('importStatus').textContent = 'ページからテキストを取得しました';
-    $('fetchToast').style.display = 'block';
-    $('fetchToast').textContent = 'ページのテキストを取得しました。本文以外が含まれる場合は、練習したい箇所に編集してください。';
-
-  } catch (err) {
-    $('importStatus').textContent = '自動取得できませんでした';
-    $('fetchToast').style.display = 'block';
-    $('fetchToast').textContent = 'このURLはブラウザから全文を取得できない可能性があります（CORS制限、ログイン、購読制限など）。論文ページの本文をコピーして「論文テキスト」に貼り付けてください。PubMed Centralのオープンアクセス論文などでお試しください。';
-  }
-});
-
-const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-let recognition = null;
-let recording = false;
-
-if (SpeechRecognition) {
-  recognition = new SpeechRecognition();
-  recognition.lang = 'en-US';
-  recognition.interimResults = true;
-  recognition.continuous = false;
-
-  let finalTranscript = '';
-
-  recognition.onstart = () => {
-    recording = true;
-    $('micBtn').classList.add('recording');
-    $('micTitle').textContent = '聞き取り中…';
-    $('micSub').textContent = '話し終えたら少し待ってください';
-    $('pronResult').textContent = '音声を認識しています…';
-    finalTranscript = '';
-  };
-
-  recognition.onresult = e => {
-    let interim = '';
-
-    for (let i = e.resultIndex; i < e.results.length; i++) {
-      const tr = e.results[i][0].transcript;
-
-      if (e.results[i].isFinal) {
-        finalTranscript += tr;
-      } else {
-        interim += tr;
-      }
-    }
-
-    $('pronResult').textContent = '認識中: ' + (finalTranscript + ' ' + interim).trim();
-  };
-
-  recognition.onerror = e => {
-    $('pronResult').textContent = '音声認識エラー: ' + e.error + '。マイクの許可やブラウザ設定を確認してください。';
-  };
-
-  recognition.onend = () => {
-    recording = false;
-    $('micBtn').classList.remove('recording');
-    $('micTitle').textContent = '選択した文を話す';
-    $('micSub').textContent = 'マイクをタップして英文を発音';
-
-    const heard = $('pronResult').textContent.replace(/^認識中:\s*/, '').trim();
-
-    if (
-      heard &&
-      heard !== '音声を認識しています…' &&
-      !heard.startsWith('音声認識エラー')
-    ) {
-      comparePronunciation(heard);
-    }
-  };
-
-} else {
-  $('micBtn').disabled = true;
-  $('micTitle').textContent = '非対応のブラウザ';
-  $('micSub').textContent = 'Chrome / Edge などでお試しください';
-  $('pronResult').textContent = 'このブラウザでは音声認識が利用できません。';
-}
-
-function normalize(s) {
-  return s.toLowerCase()
-    .replace(/[^\p{L}\p{N}\s'-]/gu, '')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
-function renderSentences() {
-  const box = $('sentenceChoices');
-  box.innerHTML = '';
-
-  const raw = $('articleText').value.trim();
-  const sentences = raw
-    .split(/(?<=[.!?])\s+|\n+/)
-    .map(s => s.trim())
-    .filter(s => s.length > 0);
-
-  if (!sentences.length) {
-    box.innerHTML = '<span style="font-size:12px;color:#77728d">先に論文テキストを入力してください。</span>';
-    return;
-  }
-
-  sentences.forEach(sentence => {
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'sentence-choice';
-    btn.textContent = sentence;
-    btn.onclick = () => selectSentence(sentence, btn);
-    box.appendChild(btn);
-  });
-
-  const currentTarget = $('targetText').dataset.text;
-  const currentButton = [...box.children].find(
-    btn => btn.textContent === currentTarget
-  );
-
-  if (currentButton) {
-    currentButton.classList.add('active');
-  } else {
-    selectSentence(sentences[0], box.firstElementChild);
-  }
-}
-
-function selectSentence(sentence, button) {
-  $('targetText').dataset.text = sentence;
-  $('targetText').textContent = sentence;
-
-  document.querySelectorAll('.sentence-choice').forEach(b => {
-    b.classList.remove('active');
-  });
-
-  if (button) button.classList.add('active');
-
-  $('micBtn').disabled = false;
-  $('micTitle').textContent = '選択した文を話す';
-  $('micSub').textContent = 'マイクをタップして英文を発音';
-  $('pronResult').textContent = '選択した英文を発音すると、認識結果をお手本と比較します。';
-}
-
-function comparePronunciation(heard) {
-  const target = $('targetText').dataset.text || '';
-  const a = normalize(target);
-  const b = normalize(heard);
-
-  if (!a) {
-    $('pronResult').textContent = '先に論文から練習する文を選択してください。';
-    return;
-  }
-
-  if (a === b) {
-    $('pronResult').textContent = '✓ お手本と一致しました！\n認識結果: ' + heard;
-  } else {
-    const aw = a.split(' ');
-    const bw = b.split(' ');
-    let same = 0;
-
-    aw.forEach((w, i) => {
-      if (w === bw[i]) same++;
-    });
-
-    const pct = Math.round(100 * same / Math.max(aw.length, bw.length, 1));
-
-    $('pronResult').textContent =
-      `もう一度練習してみましょう（文字起こしの一致度の目安: ${pct}%）\n` +
-      `お手本: ${target}\n` +
-      `認識結果: ${heard}\n` +
-      '※ アクセントや周囲の音声、音声認識の誤りでも差が出ます。';
-  }
-}
-
-$('micBtn').onclick = () => {
-  if (!recognition) return;
-
-  if (recording) {
-    recognition.stop();
-    return;
-  }
-
-  try {
-    $('pronResult').textContent = '';
-    recognition.start();
-  } catch (e) {
-    $('pronResult').textContent = 'マイクを開始できませんでした。少し待って再度お試しください。';
-  }
-};
+const $=id=>document.getElementById(id);
+const sample="The liver plays a central role in metabolism, detoxification, and protein synthesis. Human liver organoids provide a promising model for studying liver development and disease. However, reproducing the complexity of the human liver in vitro remains challenging.";
+let voices=[];
+function updateCount(){const t=$('articleText').value.trim();const words=t?t.split(/\s+/).length:0;$('wordCount').textContent=`${words} words · ${$('articleText').value.length} characters`;}
+function loadVoices(){voices=speechSynthesis.getVoices();const sel=$('voiceSelect');const old=sel.value;sel.innerHTML='';const english=voices.filter(v=>/^en(-|_)?/i.test(v.lang)||/english/i.test(v.lang+' '+v.name));const list=english.length?english:voices;if(!list.length){sel.innerHTML='<option value="">音声が見つかりません</option>';return;}list.forEach((v,i)=>{const o=document.createElement('option');o.value=voices.indexOf(v);o.textContent=`${v.name} (${v.lang})`;sel.appendChild(o)});if(old)sel.value=old;}
+if('speechSynthesis'in window){loadVoices();speechSynthesis.onvoiceschanged=loadVoices;}
+function speak(text){if(!text.trim()){alert('読み上げるテキストを入力してください。');return;}if(!('speechSynthesis'in window)){alert('このブラウザは音声読み上げに対応していません。');return;}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='en-US';u.rate=Number($('rate').value);const v=voices[Number($('voiceSelect').value)];if(v){u.voice=v;u.lang=v.lang;}u.onstart=()=> $('speechStatus').textContent='読み上げ中…';u.onend=()=> $('speechStatus').textContent='読み上げが完了しました';u.onerror=()=> $('speechStatus').textContent='音声を再生できませんでした';speechSynthesis.speak(u);}
+$('playBtn').onclick=()=>speak($('articleText').value);
+$('selectionBtn').onclick=()=>{const ta=$('articleText');const selected=ta.value.slice(ta.selectionStart,ta.selectionEnd);speak(selected||'テキスト欄で読み上げたい範囲を選択してください。');};
+$('readAgainBtn').onclick=()=>speak($('targetText').value||$('articleText').value);
+$('stopBtn').onclick=()=>{speechSynthesis.cancel();$('speechStatus').textContent='読み上げを停止しました';};
+$('rate').oninput=()=> $('rateValue').textContent=Number($('rate').value).toFixed(1)+'×';
+$('articleText').addEventListener('input',updateCount);updateCount();
+$('clearBtn').onclick=()=>{$('articleText').value='';updateCount();};
+$('sampleBtn').onclick=()=>{$('articleText').value=sample;updateCount();};
+$('urlForm').addEventListener('submit',async e=>{e.preventDefault();const url=$('paperUrl').value.trim();$('importStatus').textContent='URLを確認しています…';$('fetchToast').style.display='none';try{new URL(url);const proxy='https://api.allorigins.win/raw?url='+encodeURIComponent(url);const res=await fetch(proxy,{signal:AbortSignal.timeout(12000)});if(!res.ok)throw Error('fetch failed');const html=await res.text();const doc=new DOMParser().parseFromString(html,'text/html');doc.querySelectorAll('script,style,nav,header,footer,aside,form,iframe,noscript').forEach(n=>n.remove());let text=doc.querySelector('article')?.innerText||doc.querySelector('main')?.innerText||doc.body.innerText;text=text.replace(/\n{3,}/g,'\n\n').trim();if(text.length<300)throw Error('no full text');$('articleText').value=text;updateCount();$('importStatus').textContent='ページからテキストを取得しました';$('fetchToast').style.display='block';$('fetchToast').textContent='ページのテキストを取得しました。本文以外が含まれる場合は、練習したい箇所に編集してください。';}catch(err){$('importStatus').textContent='自動取得できませんでした';$('fetchToast').style.display='block';$('fetchToast').textContent='このURLはブラウザから全文を取得できない可能性があります（CORS制限、ログイン、購読制限など）。論文ページの本文をコピーして「論文テキスト」に貼り付けてください。PubMed Centralのオープンアクセス論文などでお試しください。';}});
+const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;let recognition=null,recording=false;
+if(SpeechRecognition){recognition=new SpeechRecognition();recognition.lang='en-US';recognition.interimResults=true;recognition.continuous=false;let finalTranscript='';recognition.onstart=()=>{recording=true;$('micBtn').classList.add('recording');$('micTitle').textContent='聞き取り中…';$('micSub').textContent='話し終えたら少し待ってください';$('pronResult').textContent='音声を認識しています…';finalTranscript='';};recognition.onresult=e=>{let interim='';for(let i=e.resultIndex;i<e.results.length;i++){const tr=e.results[i][0].transcript;if(e.results[i].isFinal)finalTranscript+=tr;else interim+=tr;}$('pronResult').textContent='認識中: '+(finalTranscript+' '+interim).trim();};recognition.onerror=e=>{$('pronResult').textContent='音声認識エラー: '+e.error+'。マイクの許可やブラウザ設定を確認してください。';};recognition.onend=()=>{recording=false;$('micBtn').classList.remove('recording');$('micTitle').textContent='タップして話す';$('micSub').textContent='英語で発音してください';const heard=$('pronResult').textContent.replace(/^認識中:\s*/,'').trim();if(heard&&heard!=='音声を認識しています…'&&!heard.startsWith('音声認識エラー'))comparePronunciation(heard);};}else{$('micBtn').disabled=true;$('micTitle').textContent='非対応のブラウザ';$('micSub').textContent='Chrome / Edge などでお試しください';$('pronResult').textContent='このブラウザでは音声認識が利用できません。';}
+function normalize(s){return s.toLowerCase().replace(/[^\p{L}\p{N}\s'-]/gu,'').replace(/\s+/g,' ').trim();}
+function comparePronunciation(heard){const target=$('targetText').value.trim();const a=normalize(target),b=normalize(heard);if(!a){$('pronResult').textContent='先に練習したい単語や英文を入力してください。';return;}if(a===b){$('pronResult').textContent='✓ お手本と一致しました！\n認識結果: '+heard;}else{const aw=a.split(' '),bw=b.split(' ');let same=0;aw.forEach((w,i)=>{if(w===bw[i])same++});const pct=Math.round(100*same/Math.max(aw.length,bw.length,1));$('pronResult').textContent=`もう一度練習してみましょう（文字起こしの一致度の目安: ${pct}%）\nお手本: ${target}\n認識結果: ${heard}\n※ アクセントや周囲の音声、音声認識の誤りでも差が出ます。`}}
+$('micBtn').onclick=()=>{if(!recognition){return;}if(recording){recognition.stop();return;}try{$('pronResult').textContent='';recognition.start();}catch(e){$('pronResult').textContent='マイクを開始できませんでした。少し待って再度お試しください。';}};
 </script>
 </body>
 </html>
